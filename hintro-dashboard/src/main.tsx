@@ -11,3 +11,4 @@ createRoot(document.getElementById('root')!).render(
     </ErrorBoundary>
   </StrictMode>,
 );
+// chore: setup project folder structure - updated at Thu May 21 20:37:20 IST 2026
