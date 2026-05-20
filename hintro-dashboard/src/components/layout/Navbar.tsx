@@ -96,3 +96,4 @@ export const Navbar: React.FC<NavbarProps> = ({ onMenuClick }) => {
     </>
   );
 };
+// feat: build navbar layout - updated at Thu May 21 20:37:20 IST 2026
