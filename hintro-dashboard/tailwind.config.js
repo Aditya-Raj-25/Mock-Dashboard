@@ -49,3 +49,4 @@ export default {
   },
   plugins: [],
 }
+// chore: tailwind configuration - updated at Thu May 21 20:37:20 IST 2026
