@@ -186,9 +186,9 @@ export const Dashboard: React.FC = () => {
                               {call.participants?.map((p, i) => (
                                 <img
                                   key={i}
-                                  src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${p.name}`}
+                                  src={`https://i.pravatar.cc/150?u=${p.name}`}
                                   alt={p.name}
-                                  className="w-5 h-5 rounded-full border border-white bg-slate-100"
+                                  className="w-6 h-6 rounded-full border-2 border-white bg-slate-100 object-cover"
                                   title={p.name}
                                 />
                               ))}
