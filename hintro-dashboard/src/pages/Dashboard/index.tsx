@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAppStore } from '@/store/useAppStore';
 import { getProfile, getCallStats, getCallHistory } from '@/api/dashboardService';
 import type { CallSession, CallStats } from '@/api/dashboardService';
-import { PieChart, Clock, Sparkles, Calendar, MoreVertical } from 'lucide-react';
+import { PieChart, Clock, Sparkles, Calendar } from 'lucide-react';
 
 // Helper to format seconds -> "Xm Ysec"
 const formatDuration = (seconds: number) => {
@@ -171,7 +171,6 @@ export const Dashboard: React.FC = () => {
                 
                 <div className="flex flex-col gap-2">
                   {group.calls.map((call) => {
-                    const time = new Date(call.started_at).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }).toLowerCase();
                     const initial = call.client ? call.client.charAt(0) : call.description.charAt(0);
                     return (
                       <div key={call._id} className="flex items-center justify-between py-2 rounded-lg transition-colors cursor-pointer group">
