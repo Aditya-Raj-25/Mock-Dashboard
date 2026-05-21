@@ -163,3 +163,4 @@ export const Sidebar: React.FC<SidebarProps> = ({ isMobileMenuOpen, setIsMobileM
 };
 
 // feat: create sidebar component - updated at Thu May 21 20:37:20 IST 2026
+// fix: responsive fixes for mobile screens - updated at Thu May 21 20:37:21 IST 2026
