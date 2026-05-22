@@ -6,19 +6,13 @@ A modern and responsive frontend dashboard built for the Hintro Frontend Assignm
 
 ## 🚀 Live Demo
 
-Add your deployed link here:
-
-```txt
-https://mock-dashboard-v8su.vercel.app/
-```
+[https://mock-dashboard-v8su.vercel.app](https://mock-dashboard-v8su.vercel.app)
 
 ---
 
 ## 📂 GitHub Repository
 
-```txt
-https://github.com/Aditya-Raj-25/Mock-Dashboard
-```
+[https://github.com/Aditya-Raj-25/Mock-Dashboard](https://github.com/Aditya-Raj-25/Mock-Dashboard)
 
 ---
 
