@@ -9,7 +9,7 @@ A modern and responsive frontend dashboard built for the Hintro Frontend Assignm
 Add your deployed link here:
 
 ```txt
-https://your-live-demo-url.vercel.app
+https://mock-dashboard-v8su.vercel.app/
 ```
 
 ---
@@ -17,7 +17,7 @@ https://your-live-demo-url.vercel.app
 ## 📂 GitHub Repository
 
 ```txt
-https://github.com/your-username/hintro-dashboard
+https://github.com/Aditya-Raj-25/Mock-Dashboard
 ```
 
 ---
