@@ -41,8 +41,8 @@ interface AppState {
 export const useAppStore = create<AppState>()(
   persist(
     (set) => ({
-      // Default to u2 (populated user) for a better first impression
-      user: MOCK_USERS[1],
+      // Default to null to enforce login
+      user: null,
       theme: 'light',
       sidebarOpen: true,
 

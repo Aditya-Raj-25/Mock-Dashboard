@@ -1,15 +1,30 @@
-import React from 'react';
-import { Mail, EyeOff } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Mail, EyeOff, Eye } from 'lucide-react';
+import { useNavigate, Navigate } from 'react-router-dom';
 import { useAppStore, MOCK_USERS } from '@/store/useAppStore';
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
-  const setUser = useAppStore(state => state.setUser);
+  const { user, setUser } = useAppStore();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+
+  // If already logged in, redirect to dashboard
+  if (user) {
+    return <Navigate to="/" replace />;
+  }
+
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // For this demo, log in as the populated user (u2)
-    setUser(MOCK_USERS[1]);
+    if (!email || !password) return;
+    
+    // Check if email matches u1, otherwise default to u2
+    if (email.toLowerCase().includes('john')) {
+      setUser(MOCK_USERS[0]);
+    } else {
+      setUser(MOCK_USERS[1]);
+    }
     navigate('/');
   };
 
@@ -34,8 +49,11 @@ const Login: React.FC = () => {
               </div>
               <input
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Example@email.com"
                 className="w-full h-10 pl-[34px] pr-3 bg-[#F8F9FA] border border-[#E2E2E8] rounded-md text-[13px] text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-slate-300 focus:border-slate-300 transition-colors"
+                required
               />
             </div>
           </div>
@@ -47,15 +65,19 @@ const Login: React.FC = () => {
             </label>
             <div className="relative flex items-center">
               <input
-                type="password"
+                type={showPassword ? 'text' : 'password'}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 placeholder="********"
                 className="w-full h-10 px-3 pr-[34px] bg-[#F8F9FA] border border-[#E2E2E8] rounded-md text-[13px] text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-slate-300 focus:border-slate-300 transition-colors"
+                required
               />
               <button 
                 type="button" 
+                onClick={() => setShowPassword(!showPassword)}
                 className="absolute right-3 text-slate-400 hover:text-slate-600 transition-colors"
               >
-                <EyeOff className="w-[15px] h-[15px]" />
+                {showPassword ? <Eye className="w-[15px] h-[15px]" /> : <EyeOff className="w-[15px] h-[15px]" />}
               </button>
             </div>
           </div>
